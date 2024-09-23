@@ -1,7 +1,7 @@
-# Introdução ao Ansible
+
 <h1 align="center">
   <br>
-    <img src="ansible-logo.png" style="background-color: #ffffff" alt="Ansible" width="500">
+    <img src="ansible-logo.png" style="background-color: #ffffff" alt="Ansible" width="350">
   <br>
   Introdução ao Ansible
   <br>
@@ -18,7 +18,7 @@
    2. Loops
    3. Blocks
    4. Condicionais
-5. Atividades práticas
+5. Exemplos práticos
 6. Vantagens e limitações
 7. Integração com outras soluções no ecossistema
 
