@@ -1,7 +1,7 @@
 # Introdução ao Ansible
 <h1 align="center">
   <br>
-    <img src=".github/ansible-logo.png" style="background-color: #ffffff" alt="Ansible" width="500">
+    <img src="ansible-logo.png" style="background-color: #ffffff" alt="Ansible" width="500">
   <br>
   Minicurso de Ansible
   <br>
