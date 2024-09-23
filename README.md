@@ -3,7 +3,7 @@
   <br>
     <img src="ansible-logo.png" style="background-color: #ffffff" alt="Ansible" width="500">
   <br>
-  Minicurso de Ansible
+  Introdução ao Ansible
   <br>
 </h1>
 
@@ -19,6 +19,8 @@
    3. Blocks
    4. Condicionais
 5. Atividades práticas
+6. Vantagens e limitações
+7. Integração com outras soluções no ecossistema
 
 ## Material disponível
 
