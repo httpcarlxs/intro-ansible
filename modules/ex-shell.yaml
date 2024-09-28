@@ -1,0 +1,9 @@
+- name: Copiar arquivo e definir dono e permissões
+  ansible.builtin.shell: # definindo o módulo que será usado
+    cmd: cat /file.txt # comando a ser executado
+  register: output # registra uma variável com o conteúdo do comando
+
+- name: Listar arquivos de um diretório
+  ansible.builtin.shell:
+    cmd: ls -la /tmp # passando o comando como uma string única
+  register: output

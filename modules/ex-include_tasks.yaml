@@ -1,0 +1,9 @@
+- name: Incluindo um playbook
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: Inclui arquivo com tasks
+    ansible.builtin.include_tasks:
+      file: ex-task.yaml            # arquivo a ser importado
+  

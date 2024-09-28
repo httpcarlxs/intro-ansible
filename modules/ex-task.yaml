@@ -1,0 +1,3 @@
+- name: Mostrar mensagem na tela
+      ansible.builtin.debug:
+        msg: "Hello {{ user }}!" 

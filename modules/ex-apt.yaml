@@ -1,0 +1,7 @@
+- name: Instalar o nginx    # nome da task
+  ansible.builtin.apt:      # definição do módulo que será usado
+    name: ngix              # lista com o nome dos pacotes a serem instalados
+
+  name: Instalar um pacote .deb
+  ansible.builtin.apt:      
+    name: /tmp/software.deb # Instalação via arquivos deb também é suportada

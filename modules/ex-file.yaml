@@ -1,0 +1,19 @@
+- name: Altera dono, grupo e permissões
+  ansible.builtin.file:
+    path: /tmp/foo.conf
+    owner: user
+    group: user-group
+    mode: '0644'
+
+  - name: Cria um diretório, caso não exista
+  ansible.builtin.file:
+    path: tmp/dir                               # caminho do objeto alvo
+    state: 'directory'
+    mode: '0755'
+    # state pode assumir os valores: 
+    # absent: os diretórios serão excluídos recursivamente
+    # directory: o diretório e os subdiretórios serão criados, caso não existam
+    # file: retorna o estado atual do path
+    # hard: um hard link será criado ou alterado
+    # link: um symlink será criado ou alterado
+    # touch: um arquivo vazio será criado, caso não exista

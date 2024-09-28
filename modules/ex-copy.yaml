@@ -1,0 +1,7 @@
+- name: Copiar e definir permissões     # nome da task
+  ansible.builtin.copy:                 # definição do módulo que será usado
+    src: /foo.conf                      # campinho local do arquivo a ser copiado
+    dest: /tmp/foo.conf                 # caminho absoluto aonde o arquivo será copiado
+    owner: user                         # nome do usuário que deve possuir o arquivo
+    group: user-group                   # nome do grupo que deve possuir o objeto
+    mode: '644'                         # as permissões que o arquivo deve possuir

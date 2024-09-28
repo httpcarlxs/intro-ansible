@@ -1,0 +1,2 @@
+- name: Incluindo um playbook
+  ansible.builtin.import_playbook: import ex-imported_playbook.yaml
