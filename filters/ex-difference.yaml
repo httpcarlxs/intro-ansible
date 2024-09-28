@@ -1,0 +1,8 @@
+- name: Testando difference
+  vars:
+    - list1: [1,2,3,4,5]
+    - list2: [6,4,3,10]
+  tasks:
+  - name: Debug filtro
+    ansible.builtin.debug:
+      msg: "{{ list1 | ansible.builtin.difference(list2) }}"

@@ -1,0 +1,5 @@
+- name: Testando from_json
+  tasks:
+  - name: Debug filtro
+    ansible.builtin.debug:
+      msg: "{{ '{\"a\": true, \"b\": 54}' | ansible.builtin.from_json }}"

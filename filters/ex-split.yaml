@@ -1,0 +1,6 @@
+- name: Testando split de lista
+  tasks:
+  - name: Debug filtro
+    ansible.builtin.debug:
+      msg: "{{ 'maçã,banana,mamão' | ansible.builtin.split(',') }}"
+      # output: ['maçã', 'banana', 'mamão']
