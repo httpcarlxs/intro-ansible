@@ -1,22 +1,20 @@
 ---
-- name: Verificar se o Apache está instalado
-  command: "apache2 -v"
-  register: apache_check
-  ignore_errors: yes
+- name: Coletar informações sobre serviços
+  ansible.builtin.service_facts:
 
-- name: Instalar Apache se não estiver presente
-  apt:
-    name: apache2
-    state: present
-  when: apache_check.rc != 0
+- name: Verificar se o Apache está instalado e em execução
+  debug:
+    msg: "Estado do Apache: {{ ansible_facts.services['apache2.service'].state if 'apache2.service' in ansible_facts.services else 'não instalado' }}"
 
-- name: Alterar a porta do Apache
-  lineinfile:
-    path: /etc/apache2/ports.conf
-    line: "Listen {{ apache_port }}"
-    state: present    
+- name: Instalar Apache se não estiver presente e iniciar o serviço
+  block:
+    - name: Instalar apache
+      apt:
+        name: apache2
+        state: present
 
-- name: Iniciar o Apache
-  service:
-    name: apache2
-    state: started
+    - name: Iniciar o Apache
+      service:
+        name: apache2
+        state: started
+  when: "'apache2.service' not in ansible_facts.services"
