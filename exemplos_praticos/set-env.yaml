@@ -1,0 +1,8 @@
+--- 
+- name: Set environment 
+  hosts: teste
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: apache
+    

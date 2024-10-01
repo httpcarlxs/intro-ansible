@@ -1,0 +1,22 @@
+---
+- name: Verificar se o Apache está instalado
+  command: "apache2 -v"
+  register: apache_check
+  ignore_errors: yes
+
+- name: Instalar Apache se não estiver presente
+  apt:
+    name: apache2
+    state: present
+  when: apache_check.rc != 0
+
+- name: Alterar a porta do Apache
+  lineinfile:
+    path: /etc/apache2/ports.conf
+    line: "Listen {{ apache_port }}"
+    state: present    
+
+- name: Iniciar o Apache
+  service:
+    name: apache2
+    state: started
