@@ -1,2 +1,6 @@
----
-# vars file for mysql
+mysql_image: "mysql/mysql-server:latest"
+mysql_container_name: "my-mysql"
+mysql_database: "mysqlDB"
+mysql_root_password: "mysqlPW"
+mysql_port: "3306"
+mysql_volume: "mysql-volume"

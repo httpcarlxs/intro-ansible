@@ -1,0 +1,33 @@
+---
+- name: Kill environment
+  hosts: teste
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: Colete dados sobre serviços
+      ansible.builtin.service_facts:   
+
+    - name: Parar e apagar apache
+      apt:
+        name: apache2
+        state: purged
+      when: "'apache2' in ansible_facts.services"
+
+  block:
+    - name: Parar o container MySQL
+      community.docker.docker_container:
+        name: my-mysql
+        state: stopped
+      when: "'my-mysql' in ansible.builtin.docker_containers"
+
+    - name: Remover o container MySQL
+      community.docker.docker_container:
+        name: my-mysql
+        state: absent
+
+    - name: Remover a imagem MySQL
+      community.docker.docker_image:
+        name: mysql
+        state: absent
+
+  when: "'my-mysql' in ansible.builtin.docker_containers"

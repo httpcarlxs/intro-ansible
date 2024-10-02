@@ -1,26 +1,21 @@
 ---
-- name: Check if containers are running
-  command: docker ps 
-  register: running_containers
+- name: Manage Docker containers
+  hosts: teste
+  tasks:
+    - name: Check if containers are running
+      command: docker ps 
+      register: running_containers
 
-- name: Container status
-  debug:
-    var: running_containers.stdout_lines
+    - name: Display running containers
+      debug:
+        var: running_containers.stdout_lines
 
-- name: Copy dockerfile to host
-  copy:
-    src: "/home/ibm1/intro-ansible/exemplos_praticos/docker-compose.yaml"
-    dest: /home/teste
+    - name: Copy Docker Compose file to host
+      copy:
+        src: "{{ home_path }}/intro-ansible/exemplos_praticos/docker-compose.yaml"
+        dest: "/home/teste/docker-compose.yaml"
 
-  
-# - name: Run docker compose
-#   shell: docker-compose up -d
-#   args:
-#     chdir: "{{ home_path }}/intro-ansible/exemplos_praticos"
-
-
-# - name: Teste
-#   debug:
-#     msg: "!!!!!!!!!!!!!!!!!!! {{ running_containers.stdout }}"
-
-# - name: Compose u
+    - name: Run Docker Compose
+      command: docker-compose up -d
+      args:
+        chdir: "/home/teste"

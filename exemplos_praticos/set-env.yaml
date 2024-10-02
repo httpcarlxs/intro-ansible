@@ -4,6 +4,6 @@
   become: yes
   gather_facts: yes
   roles:
-    # - role: apache
-      - role: mysql
+    - role: apache
+      # - role: mysql
     
