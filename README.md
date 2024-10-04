@@ -24,5 +24,12 @@
 
 ## Material disponível
 
-- [Apresentação](.)
-- [Tutorial de instalação e primeiros passos](.)
+- [Apresentação](https://docs.google.com/presentation/d/1dqhu5HVCKP2Tkp53dWjPJyHv5mG8VeFX/edit?usp=sharing&ouid=100314271225781937171&rtpof=true&sd=true)
+- [Tutorial de instalação e primeiros passos](https://github.com/httpcarlxs/intro-ansible/blob/main/ansible-install.sh)
+- [Vídeo com a demonstração de uso](https://drive.google.com/file/d/1KkrLzD0hpm_3yb2d7Th8VVU_Ka2rY5Wq/view?usp=sharing)
+
+## Responsáveis
+- Carlos Henrique Ferreira Fuch
+- Felipe
+- Ian
+- Sara Siqueira
